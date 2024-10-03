@@ -1,0 +1,20 @@
+[
+    {"name" : "Ano Novo", "date" : "01-01", "thumbnail": "assets/images/holidays/ano_novo.jpg", "link": "/category/ano-novo"},
+    {"name" : "Carnaval", "date" : "02-25", "thumbnail": "assets/images/holidays/carnaval.jpg", "link": "/category/carnaval"},
+    {"name" : "Consciência Negra", "date" : "11-20", "thumbnail": "assets/images/holidays/consciencia_negra.jpg", "link": "/category/consciencia-negra"},
+    {"name" : "Descobrimento do Brasil", "date" : "04-22", "thumbnail": "assets/images/holidays/descobrimento_do_brasil.jpg", "link": "/category/descobrimento-do-brasil"},
+    {"name" : "Dia da Escola", "date" : "03-15", "thumbnail": "assets/images/holidays/dia_da_escola.jpg", "link": "/category/dia-da-escola"},
+    {"name" : "Dia da Família", "date" : "05-15", "thumbnail": "assets/images/holidays/dia_da_familia.jpg", "link": "/category/dia-da-familia"},
+    {"name" : "Dia da Mulher", "date" : "03-08", "thumbnail": "assets/images/holidays/dia_da_mulher.jpg", "link": "/category/dia-da-mulher"},
+    {"name" : "Dia do Folclore", "date" : "08-22", "thumbnail": "assets/images/holidays/dia_do_folclore.jpg", "link": "/category/dia-do-folclore"},
+    {"name" : "Dia do Livro", "date" : "04-23", "thumbnail": "assets/images/holidays/dia_do_livro.jpg", "link": "/category/dia-do-livro"},
+    {"name" : "Dia do Trabalho", "date" : "05-01", "thumbnail": "assets/images/holidays/dia_do_trabalho.jpg", "link": "/category/dia-do-trabalho"},
+    {"name" : "Dia do Índio", "date" : "04-19", "thumbnail": "assets/images/holidays/dia_do_indio.jpg", "link": "/category/dia-do-indio"},
+    {"name" : "Festa Junina", "date" : "06-24", "thumbnail": "assets/images/holidays/festa_junina.jpg", "link": "/category/festa-junina"},
+    {"name" : "Independência do Brasil", "date" : "09-07", "thumbnail": "assets/images/holidays/independencia_do_brasil.jpg", "link": "/category/independencia-do-brasil"},
+    {"name" : "Natal", "date" : "12-25", "thumbnail": "assets/images/holidays/natal.jpg", "link": "/category/natal"},
+    {"name" : "Nossa Senhora Aparecida", "date" : "10-12", "thumbnail": "assets/images/holidays/nossa_senhora_aparecida.jpg", "link": "/category/nossa-senhora-aparecida"},
+    {"name" : "Proclamação da República", "date" : "11-15", "thumbnail": "assets/images/holidays/proclamacao_da_republica.jpg", "link": "/category/proclamacao-da-republica"},
+    {"name" : "Páscoa", "date" : "04-09", "thumbnail": "assets/images/holidays/pascoa.jpg", "link": "/category/pascoa"},
+    {"name" : "Tiradentes", "date" : "04-21", "thumbnail": "assets/images/holidays/tiradentes.jpg", "link": "/category/tiradentes"}
+]

@@ -1,0 +1,122 @@
+{
+  "blog": {
+    "name": "Professora Antenada",
+    "title": "Professora antenada - Sempre antenada sobre Educação!",
+    "description": "Página criada para educadores(as).Informações, dicas e materiais para auxílio da rotina docente.",
+    "about": "Professora Antenada. Tudo sobre educação Infantil, atividades, conteúdos e muito mais...",
+    "keywords": "Educação Infantil, Atividade Infantil, Ensino Religioso, Atividades Lúdicas, Estratégias de Ensino, Plano de Aula, Festividades Cristãs"
+  },
+  "search": {
+    "title": "Pesquise por conteúdos e materiais no blog!",
+    "description": "Utilize palavras-chave para potencializar os resultados. Se estiver procurando por datas específicas, por exemplo para o dia da árvore, pesquise por: 'atividades para o dia da árvore'.",
+    "navigate": "Navegue pelos resultados e explore os materiais. Todos os nossos conteúdos são gratuitos.",
+    "placeholder": "Pesquise por atividades, conteúdos, materiais e mais...",
+    "cancel_action": "Cancelar",
+    "results": "Resultados para:"
+  },
+  "menu": {
+    "initial": "Início"
+  },
+  "featured": {
+    "title": "Em Destaque"
+  },
+  "news": {
+    "title": "Novidades"
+  },
+  "categories": {
+    "title": "Categorias"
+  },
+  "favorites": {
+    "title": "Favoritos"
+  },
+  "posts": {
+    "title": "Postagens"
+  },
+  "sidebar": {
+    "title": "Conteúdos Disponíveis",
+    "want_know_more": "Quer saber mais? Acesse:"
+  },
+  "seo": {
+    "atividades": "Descubra uma ampla gama de atividades educativas e divertidas para crianças entre 8 a 12 anos. Nossa categoria de Atividades oferece recursos criativos que estimulam a imaginação e a aprendizagem, desde artesanato até experimentos científicos. Aventure-se agora e torne o aprendizado uma experiência emocionante!",
+    "desenvolvimento-infantil": "A categoria Desenvolvimento Infantil é o seu guia definitivo para entender as várias fases do crescimento de seus filhos. Aqui, você encontrará artigos e dicas sobre habilidades emocionais, desenvolvimento cognitivo e muito mais. Aprenda como apoiar o desenvolvimento saudável de seu filho em cada etapa.",
+    "guias-para-pais": "Professores, este é o seu tesouro de recursos! Nossa seção Guias para Professores é projetada para fornecer planos de aula inovadores, estratégias de ensino e dicas para gerenciamento de sala de aula. Tudo o que você precisa para tornar suas aulas mais envolventes e eficazes.",
+    "guias-para-professores": "Ser pai ou mãe é uma jornada maravilhosa, e nosso objetivo é torná-la ainda melhor. Explore a categoria Guias para Pais para encontrar conselhos práticos sobre educação infantil, saúde e bem-estar, além de dicas para equilibrar a vida familiar. Seja o herói que seus filhos merecem.",
+    "jogos": "Aprendizado é sempre melhor quando é divertido! Nossa categoria Jogos traz uma série de jogos educativos que são tanto envolventes quanto instrutivos. De matemática a língua portuguesa, torne o estudo uma brincadeira. Ideal para crianças de 8 a 12 anos que querem aprender brincando."
+  },
+  "footer": {
+    "title": "Copyright 2021 All Right Reserved. Professora Antenada",
+    "links": [
+      {
+        "title": "Sobre o Blog",
+        "url": "/sobre"
+      },
+      {
+        "title": "Dúvidas e Sugestões",
+        "url": "/duvidas-e-sugestoes"
+      },
+      {
+        "title": "Categorias",
+        "url": "/categorias"
+      },
+      {
+        "title": "Políticas de Privacidade",
+        "url": "/politicas-privacidade"
+      }
+    ]
+  },
+  "about": {
+    "title": "Bem-vindo ao Professora Antenada",
+    "subtitle": "Queridos professores do ensino infantil,",
+    "description": "É com imensa gratidão e alegria que damos as boas-vindas ao nosso espaço dedicado à educação infantil, repleto de atividades educativas criativas, inspiradoras e pensadas especialmente para vocês, que moldam o futuro de nossas crianças. Agradecemos por dedicarem seu tempo precioso a explorar novas maneiras de tornar o aprendizado uma jornada emocionante e enriquecedora para os pequenos.",
+    "goal": {
+      "title": "Nosso Compromisso: Respeito, Dedicação e Qualidade",
+      "description": "Entendemos a importância vital de sua missão como educadores do ensino infantil. Nosso compromisso é apoiá-los da melhor forma possível, oferecendo recursos de alta qualidade que estimulem o desenvolvimento cognitivo, emocional e social das crianças entre 5 e 10 anos. Aqui, buscamos estabelecer uma base sólida de respeito mútuo, dedicação incansável e qualidade em cada atividade sugerida."
+    },
+    "content": {
+      "title": "Explorando o Nosso Conteúdo: Um Mundo de Possibilidades",
+      "description": "Atividades Lúdicas: Descubra atividades lúdicas e divertidas que transformarão a sala de aula em um ambiente acolhedor e inspirador para as crianças.|Recursos Didáticos: Encontre recursos didáticos inovadores que se alinham às mais recentes abordagens pedagógicas, facilitando o processo de ensino-aprendizagem.|Projetos Interativos: Explore projetos interativos que envolvem os pequenos em aprendizado prático, estimulando a criatividade e o pensamento crítico.|Dicas de Organização: Receba dicas práticas para organizar seu espaço de ensino, promovendo um ambiente propício ao aprendizado e à participação ativa."
+    },
+    "contact": {
+      "title": "Conecte-se Conosco!",
+      "description": "Siga-nos nas redes sociais para ficar atualizado com as últimas atividades, ideias inspiradoras e notícias educacionais. Acreditamos que juntos podemos criar um ambiente educacional ainda mais positivo e eficaz.|Muito obrigado por fazer parte da nossa comunidade educativa. Estamos empolgados em embarcar nesta jornada educacional ao seu lado, proporcionando recursos valiosos e inspiradores para enriquecer suas práticas pedagógicas.",
+      "thanks": "Com gratidão,"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidade para Professora Antenada",
+    "subtitle": "Última atualização: 12 Dezembro 2023",
+    "description": "Bem-vindo ao Professora Antenada! A sua privacidade é importante para nós. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos as informações pessoais que você fornece ao visitar nosso blog.|Ao utilizar Professora Antenada, você concorda com os termos descritos nesta Política de Privacidade.",
+    "info": {
+      "title": "Coleta de Informações:",
+      "description": "Cookies:|Utilizamos cookies para aprimorar a experiência do usuário. Os cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita o site. Eles nos ajudam a melhorar a funcionalidade do site, personalizar o conteúdo de acordo com suas preferências e analisar o tráfego do site. Você pode gerenciar as configurações de cookies no seu navegador.|Google Analytics:|Professora Antenada utiliza o Google Analytics para analisar o tráfego do site e entender como os visitantes interagem com o conteúdo. O Google Analytics utiliza cookies para coletar informações anônimas, como o número de visitantes e as páginas mais populares. Essas informações são usadas para melhorar continuamente nosso conteúdo e oferecer uma experiência mais personalizada.|Google AdSense:|Professora Antenada exibe anúncios do Google AdSense. Esses anúncios são personalizados com base nos interesses do usuário, conforme identificado por meio de cookies. O Google AdSense coleta informações não pessoais para exibir anúncios relevantes. Você pode gerenciar suas preferências de anúncios no Google Ad Settings."
+    },
+    "share": {
+      "title": "Compartilhamento de Informações:",
+      "description": "Não compartilhamos suas informações pessoais com terceiros, a menos que seja necessário para o funcionamento do site, cumprimento de obrigações legais ou mediante seu consentimento."
+    },
+    "safe": {
+      "title": "Segurança",
+      "description": "Implementamos medidas de segurança para proteger suas informações contra acesso não autorizado, alteração, divulgação ou destruição não autorizada."
+    },
+    "rights": {
+      "title": "Seus Direitos",
+      "description": "Você tem o direito de acessar suas informações pessoais e pode solicitar correções ou exclusões, se necessário. Entre em contato conosco para exercer esses direitos."
+    },
+    "updates": {
+      "title": "Alterações na Política de Privacidade",
+      "description": "Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos que você revise esta página regularmente para estar ciente de quaisquer alterações.|Ao continuar a usar Professora Antenada, você concorda com esta Política de Privacidade. Se tiver alguma dúvida ou preocupação, entre em contato conosco através do e-mail memorizou.app@gmail.com.|Obrigado por visitar Professora Antenada!"
+    }
+  },
+  "help": {
+    "title": "Dúvidas e Sugestões",
+    "description": "Bem-vindo à nossa página dedicada a esclarecer suas dúvidas e receber suas valiosas sugestões! Estamos aqui para garantir que sua experiência conosco seja a melhor possível. Se você tiver perguntas ou ideias que gostaria de compartilhar, por favor, escolha o método de contato que melhor se adequa a você.",
+    "contact": {
+      "title": "Redes Sociais",
+      "description": "Conecte-se conosco através das redes sociais para interagir, receber atualizações e enviar suas mensagens."
+    }
+  },
+  "actions": {
+    "content": "Conteúdos",
+    "more": "Ver mais"
+  }
+}

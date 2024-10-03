@@ -1,0 +1,22 @@
+{
+  "name": "afrodite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss assets/css/style.css -o assets/css/style_generated.css",
+    "watch:css": "postcss assets/css/style.css -o assets/css/style_generated.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  },
+  "devDependencies": {
+    "postcss-cli": "^11.0.0"
+  }
+}
