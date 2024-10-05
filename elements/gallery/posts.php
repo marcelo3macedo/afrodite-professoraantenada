@@ -27,4 +27,5 @@ function load_post($post) {
         </div>
     EOL;
 }
+
 ?>

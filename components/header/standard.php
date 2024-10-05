@@ -20,5 +20,5 @@
     <?php load_fonts() ?>
     <?php load_ads() ?>
 </head>
-<body class="bg-slate-50">
+<body class="bg-yellow-100">
   <?php load_facebook_sdk() ?>

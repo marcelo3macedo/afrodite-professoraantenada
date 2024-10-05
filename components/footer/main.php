@@ -24,6 +24,7 @@
         
         const link = document.createElement('a');
         link.href = image;
+        link.target = "_blanks";
         
         link.download = 'downloaded-image.png';
         

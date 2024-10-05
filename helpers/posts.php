@@ -18,8 +18,9 @@ function get_posts_from_query($query) {
     return $results;
 }
 
-function get_latest_posts() {
-    $cached_result = get_transient('get_latest_posts');
+function get_latest_posts($page = 1) {
+    $cache_key = 'get_latest_posts_page_' . $page;
+    $cached_result = get_transient($cache_key);
 
     if ($cached_result === true) {
         return $cached_result;
@@ -28,12 +29,13 @@ function get_latest_posts() {
     $args = array(
         'post_type'      => 'post',
         'posts_per_page' => CONST_NUMBER_LATEST_POSTS,
+        'paged'          => $page,
     );
 
     $query = new WP_Query($args);
     $posts = get_posts_from_query($query);
 
-    set_transient('get_latest_posts', $posts, 24 * 60 * 60 );
+    set_transient($cache_key, $posts, 24 * 60 * 60 );
 
     return $posts;
 }

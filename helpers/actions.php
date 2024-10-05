@@ -61,10 +61,10 @@
                 function fn_more() {
                     var currentUrl = window.location.href;
                     var url = new URL(currentUrl);
-                    var currentPage = parseInt(url.searchParams.get('paged')) || 1;
+                    var currentPage = parseInt(url.searchParams.get('page')) || 1;
                     var nextPage = currentPage + 1;
 
-                    url.searchParams.set('paged', nextPage);
+                    url.searchParams.set('page', nextPage);
                     window.location.href = url.toString();
                 }
 

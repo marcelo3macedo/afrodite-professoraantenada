@@ -21,7 +21,7 @@
 	include_once 'components/blocks/actions/more.php';
 ?>
 
-<div class="single bg-yellow-100 container mx-auto rounded-md py-2 px-4 md:my-4">
+<div class="single bg-yellow-100 container mx-auto rounded-md py-2 px-4">
 	<div class="flex items-center py-4 px-2 overflow-x-auto whitespace-nowrap">
 		<a href="/" class="text-gray-600">
 			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
@@ -29,22 +29,25 @@
 			</svg>
 		</a>
 
-		<span class="mx-2 text-gray-500 rtl:-scale-x-100">
-			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-				<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-			</svg>
-		</span>
-
-		<a href="/category/<?php echo isset($post_categories) ? $post_categories[0]->slug  ?? '' : '' ?>" class="text-gray-600 hover:underline">
-			<?php echo isset($post_categories) ? $post_categories[0]->name  ?? '' : '' ?>
-		</a>
+		<?php if (isset($post_categories) && !empty($post_categories)): ?>
+			<?php foreach ($post_categories as $category): ?>
+				<span class="mx-2 text-gray-500 rtl:-scale-x-100">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+					</svg>
+				</span>
+				<a href="/category/<?php echo $category->slug; ?>" class="text-gray-600 hover:underline">
+					<?php echo $category->name; ?>
+				</a>
+			<?php endforeach; ?>
+		<?php endif; ?>
 	</div>
     <div class="header pt-4">
         <h1 class="font-bold"><?php getTextContent($current_post->post_title) ?></h1>
         <?php load_category_gallery($post_categories) ?>
     </div>
 	
-    <div class="content">
+    <div class="content my-0">
         <?php getTextContent($current_post->post_content) ?>
     </div>
 </div>

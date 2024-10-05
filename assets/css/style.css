@@ -197,7 +197,6 @@ footer .copyright {
 .single .content {
     padding: 20px;
     border-radius: 10px;
-    margin: 20px 0;
 }
 
 .shortcuts {
@@ -297,6 +296,11 @@ footer li h4 {
     color: inherit;
     border-bottom: none;
     padding: 10px 0;
+    font-size: 16pt;
+}
+
+.single .content .footer {
+    font-size: 16pt;
 }
 
 .single .content  .informations {
@@ -345,16 +349,6 @@ footer li h4 {
     padding: 5px 0;
 }
 
-.category-page .more h4 {
-    background: var(--pallete03);
-    padding: 20px 15px;
-    max-width: 400px;
-    margin: auto;
-    text-align: center;
-    color: var(--fulllight);
-    border-radius: 10px;
-    margin-bottom: 40px;
-}
 
 @media (max-width: 1200px) {
     body {
@@ -740,12 +734,20 @@ footer li h4 {
         overflow: hidden;
         text-align: center;
         max-width: 300px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .post-template .images .image {
+        width: 30%;
     }
 }
 
 .post-template .images {
     padding: 40px 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .post-template .images .image {
