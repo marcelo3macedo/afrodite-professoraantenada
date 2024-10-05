@@ -8,7 +8,7 @@ function styles_recover($url) {
     }
 
     echo <<<EOL
-        <link rel="stylesheet" href="$url/assets/css/style.min.css">
+        <link rel="stylesheet" href="$url/assets/css/style_generated.css">
     EOL;
 }
 
