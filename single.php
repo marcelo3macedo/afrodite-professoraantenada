@@ -48,7 +48,7 @@
         <h1 class="font-bold"><?php getTextContent($current_post->post_title) ?></h1>
         <?php load_category_gallery($post_categories) ?>
     </div>
-	
+
     <div class="content my-0">
         <?php getTextContent($current_post->post_content) ?>
 

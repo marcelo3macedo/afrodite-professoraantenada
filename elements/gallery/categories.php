@@ -7,7 +7,7 @@ function load_category_gallery($items) {
     }
     
     echo <<<EOL
-        <div class="gallery no-select">{$categories}</div>
+        <div class="w-full flex my-2 no-select">{$categories}</div>
     EOL;
 }
 

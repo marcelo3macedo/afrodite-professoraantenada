@@ -141,6 +141,8 @@ footer .copyright {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery .post:active,
