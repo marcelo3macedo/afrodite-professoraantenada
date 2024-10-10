@@ -21,10 +21,16 @@ function seo_generate($post) {
     $icon = get_template_directory_uri() . '/assets/images/icon.png';
     $current_url = home_url(add_query_arg(array(), $wp->request));
 
+    if (is_category()) {
+        $category = get_queried_object();
+        $title = $category->name;
+        $description = $category->description;
+    }
+
     return (object)[
         'name' => $data->blog->name,
         'title' => $title,
-        'description' => $description,
+        'description' => substr($description, 0, 190),
         'keywords' => $keywords,
         'url' => $current_url,
         'amp_url' => $current_url . '?amp=1',
