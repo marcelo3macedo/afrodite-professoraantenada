@@ -98,4 +98,27 @@ function get_posts_by_id($id) {
 
     return $post_data;
 }
+
+function get_random_posts($page = 1) {
+    $cache_key = 'get_random_posts_page_' . $page;
+    $cached_result = get_transient($cache_key);
+
+    if ($cached_result !== false) {
+        return $cached_result;
+    }
+
+    $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 6,
+        'paged'          => $page,
+        'orderby'        => 'rand',
+    );
+
+    $query = new WP_Query($args);
+    $posts = get_posts_from_query($query);
+
+    set_transient($cache_key, $posts, 24 * 60 * 60);
+
+    return $posts;
+}
 ?>

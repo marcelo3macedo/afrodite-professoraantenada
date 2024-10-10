@@ -14,11 +14,13 @@
     $current_post_id = get_the_ID();
     $current_post = get_posts_by_id($current_post_id);
     $post_categories = get_main_complement_category($current_post->id);
+    $related_posts = get_random_posts();
     
 	include_once 'constants/loader.php';
 	include_once 'components/header/main.php';
 	include_once 'components/menu/main.php';
 	include_once 'components/blocks/actions/more.php';
+    include_once 'elements/gallery/posts.php';
 ?>
 
 <div class="single bg-yellow-100 container mx-auto rounded-md py-2 px-4">
@@ -49,6 +51,13 @@
 	
     <div class="content my-0">
         <?php getTextContent($current_post->post_content) ?>
+
+		<div class="related my-8">
+			<h2 class="font-bold text-xl text-center">Você também pode gostar de:</h2>
+			<div class="my-4">
+				<?php load_post_gallery($related_posts) ?>
+			</div>
+		</div>
     </div>
 </div>
 
