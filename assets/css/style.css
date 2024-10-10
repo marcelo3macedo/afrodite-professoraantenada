@@ -178,13 +178,14 @@ footer .copyright {
     padding: 10px 0px;
     height: 250px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     overflow: hidden;
 }
 
 .gallery .post .hover-info p {
     padding: 5px 0;
+    text-align: justify;
 }
 
 .gallery .category {

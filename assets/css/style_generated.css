@@ -892,11 +892,6 @@ video {
   line-height: 2.5rem;
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1181,13 +1176,14 @@ footer .copyright {
   padding: 10px 0px;
   height: 250px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   overflow: hidden;
 }
 
 .gallery .post .hover-info p {
   padding: 5px 0;
+  text-align: justify;
 }
 
 .gallery .category {
