@@ -170,7 +170,7 @@ footer .copyright {
 
 .gallery .post .image img {
     max-width: 100%;
-    height: 200px;
+    height: 400px;
 }
 
 .gallery .post .hover-info {
@@ -409,11 +409,14 @@ footer li h4 {
     }
 
     .gallery .post {
-        flex: 0 0 calc(50% - 10px);
+        flex: 0 0 calc(100% - 10px);
+        margin: 20px 0;
     }
 
     .gallery .post .hover-info {
-        height: 120px;
+        height: 220px;
+        text-align: justify;
+        padding: 10px;
     }
 
     .single {

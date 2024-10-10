@@ -16,7 +16,7 @@
     $has_more = count($posts) === 12;
 ?>
 
-<div>
+<div class="px-2 md:px-0">
 	<div class="posts">
 		<?php load_post_gallery($posts) ?>
 	</div>

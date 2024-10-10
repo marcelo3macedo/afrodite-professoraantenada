@@ -20,7 +20,7 @@
                             <h1 class="text-lg py-2 font-semibold text-gray-700 capitalize">
                                 <?php getTextContent($subcategory->name) ?>
                             </h1>
-                            <p class="text-gray-500 text-justify text-base">
+                            <p class="text-gray-500 text-justify text-sm">
                                 <?php getTextContent($subcategory->description) ?>
                             </p>
                             <div class="flex items-center -mx-1 text-sm text-violet-500 capitalize transition-colors duration-300 transform hover:underline hover:text-blue-600">

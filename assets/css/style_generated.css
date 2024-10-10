@@ -887,11 +887,6 @@ video {
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1173,7 +1168,7 @@ footer .copyright {
 
 .gallery .post .image img {
   max-width: 100%;
-  height: 200px;
+  height: 400px;
 }
 
 .gallery .post .hover-info {
@@ -1411,11 +1406,14 @@ footer li h4 {
   }
 
   .gallery .post {
-    flex: 0 0 calc(50% - 10px);
+    flex: 0 0 calc(100% - 10px);
+    margin: 20px 0;
   }
 
   .gallery .post .hover-info {
-    height: 120px;
+    height: 220px;
+    text-align: justify;
+    padding: 10px;
   }
 
   .single {
@@ -1852,9 +1850,19 @@ footer li h4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
