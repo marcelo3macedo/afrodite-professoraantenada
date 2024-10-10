@@ -100,4 +100,22 @@ function get_main_complement_category($post_id) {
 
     return $results;
 }
+
+function get_cached_subcategories( $parent_term_id ) {
+    $transient_key = 'subcategories_' . $parent_term_id;
+    $subcategories = get_transient( $transient_key );
+
+    if ( false === $subcategories ) {
+        $subcategories = get_terms( array(
+            'taxonomy'   => 'category',
+            'parent'     => $parent_term_id,
+            'hide_empty' => false,
+            'number'     => 4,
+        ) );
+
+        set_transient( $transient_key, $subcategories, DAY_IN_SECONDS );
+    }
+
+    return $subcategories;
+}
 ?>

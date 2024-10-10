@@ -15,10 +15,13 @@
 	include_once 'components/header/main.php';
 	include_once 'components/menu/main.php';
 ?>
-<?php 
-    $is_main ?
-        include_once 'components/blocks/categories/holidays.php' :
-        include_once 'components/blocks/categories/main.php';
 
-	include_once 'components/footer/main.php';
-?>
+<div class="category-page container mx-auto min-h-svh">
+	<?php 
+		include_once 'components/blocks/categories/header.php';
+		include_once 'components/blocks/categories/posts.php';
+		include_once 'components/blocks/categories/subcategories.php';
+	?>
+</div>
+
+<?php include_once 'components/footer/main.php'; ?>

@@ -12,6 +12,9 @@ function load_post_gallery($items) {
 }
 
 function load_post($post) {
+    $excerpt_parts = explode('|', $post->excerpt);
+    $excerpt_first = isset($excerpt_parts[0]) ? trim($excerpt_parts[0]) : '';
+
     return <<<EOL
         <div class="post no-select">
             <a href="$post->link">
@@ -19,8 +22,9 @@ function load_post($post) {
                     <div class="image">
                         <img src="$post->thumbnail" alt="$post->title" class="mx-auto h-52">
                     </div>
-                    <div class="hover-info">
+                    <div class="hover-info flex flex-col">
                         <h4 class="font-bold">$post->title</h4>
+                        <p class="text-sm">$excerpt_first</p>
                     </div>
                 </div>
             </a>

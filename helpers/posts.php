@@ -9,7 +9,8 @@ function get_posts_from_query($query) {
             $results[] = (object)array(
                 'title'   => get_the_title(),
                 'link'    => get_permalink(),
-                'thumbnail' => $thumbnail_url
+                'thumbnail' => $thumbnail_url,
+                'excerpt'   => get_the_excerpt()
             );
         endwhile;
         wp_reset_postdata();

@@ -176,10 +176,15 @@ footer .copyright {
 .gallery .post .hover-info {
     text-align: center;
     padding: 10px 0px;
-    height: 100px;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.gallery .post .hover-info p {
+    padding: 5px 0;
 }
 
 .gallery .category {
