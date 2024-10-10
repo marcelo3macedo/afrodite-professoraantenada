@@ -17,9 +17,9 @@
                 <?php foreach ($subcategories as $subcategory) : ?>
                     <div class="flex flex-col items-center p-6 space-y-3 text-center bg-yellow-50 rounded-xl">
                         <a href="/category/<?php getTextContent($subcategory->slug) ?>" class="flex flex-col hover:opacity-85 hover:cursor-pointer">
-                            <h1 class="text-lg py-2 font-semibold text-gray-700 capitalize">
+                            <h2 class="text-lg py-2 font-semibold text-gray-700 capitalize">
                                 <?php getTextContent($subcategory->name) ?>
-                            </h1>
+                            </h2>
                             <p class="text-gray-500 text-justify text-sm">
                                 <?php getTextContent($subcategory->description) ?>
                             </p>
