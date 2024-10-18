@@ -1,30 +1,33 @@
 <?php
-function get_category_id($queried) {
+function get_category_id($queried)
+{
     if ($queried instanceof WP_Term && is_category()) {
         return $queried->cat_ID;
     }
 }
 
-function get_categories_by_children($parent_category_id) {
+function get_categories_by_children($parent_category_id)
+{
     $cached_result = get_transient('get_categories_by_children_' . $parent_category_id);
 
     if ($cached_result === true) {
         return $cached_result;
     }
 
-    $categories = get_categories( array(
+    $categories = get_categories(array(
         'orderby' => 'name',
         'order'   => 'ASC',
         'parent' => $parent_category_id,
         'hide_empty' => false
     ));
 
-    set_transient('get_categories_by_children_' . $parent_category_id, $categories, 24 * 60 * 60 );
+    set_transient('get_categories_by_children_' . $parent_category_id, $categories, 24 * 60 * 60);
 
     return $categories;
 }
 
-function get_categories_by_post_id($post_id) {
+function get_categories_by_post_id($post_id)
+{
     $cached_result = get_transient('get_categories_by_post_id_' . $post_id);
 
     if ($cached_result === true) {
@@ -33,12 +36,13 @@ function get_categories_by_post_id($post_id) {
 
     $posts = get_the_category($post_id);
 
-    set_transient('get_categories_by_post_id_' . $post_id, $posts, 24 * 60 * 60 );
+    set_transient('get_categories_by_post_id_' . $post_id, $posts, 24 * 60 * 60);
 
     return $posts;
 }
 
-function get_list_categories_by_childen($parent_category_id) {
+function get_list_categories_by_childen($parent_category_id)
+{
     $results = [];
     $categories =  get_categories_by_children($parent_category_id);
 
@@ -48,18 +52,19 @@ function get_list_categories_by_childen($parent_category_id) {
             'url' => '/category/' . $category->slug
         ];
     }
-    
+
     return $results;
 }
 
-function get_list_categories_by_childen_with_initial($parent_category_id, $initial_name) {
+function get_list_categories_by_childen_with_initial($parent_category_id, $initial_name)
+{
     $results = [];
 
     $results[] = (object)[
         'title' => $initial_name,
         'url' => '/'
     ];
-    
+
     $categories =  get_categories_by_children($parent_category_id);
 
     foreach ($categories as $category) {
@@ -68,17 +73,19 @@ function get_list_categories_by_childen_with_initial($parent_category_id, $initi
             'url' => '/category/' . $category->slug
         ];
     }
-    
+
     return $results;
 }
 
-function check_if_category_is_main($category) {
+function check_if_category_is_main($category)
+{
     if ($category instanceof WP_Term && is_category()) {
         return $category->parent === CONST_MAIN_CATEGORY;
     }
 }
 
-function get_main_complement_category($post_id) {
+function get_main_complement_category($post_id)
+{
     $results = [];
     $post_categories = get_categories_by_post_id($post_id);
 
@@ -101,21 +108,12 @@ function get_main_complement_category($post_id) {
     return $results;
 }
 
-function get_cached_subcategories( $parent_term_id ) {
-    $transient_key = 'subcategories_' . $parent_term_id;
-    $subcategories = get_transient( $transient_key );
-
-    if ( false === $subcategories ) {
-        $subcategories = get_terms( array(
-            'taxonomy'   => 'category',
-            'parent'     => $parent_term_id,
-            'hide_empty' => false,
-            'number'     => 4,
-        ) );
-
-        set_transient( $transient_key, $subcategories, DAY_IN_SECONDS );
-    }
-
-    return $subcategories;
+function get_subcategories($parent_term_id)
+{
+    return get_terms(array(
+        'taxonomy'   => 'category',
+        'parent'     => $parent_term_id,
+        'hide_empty' => false,
+        'number'     => 4,
+    ));
 }
-?>
