@@ -1,5 +1,6 @@
 <?php
-function get_posts_from_query($query) {
+function get_posts_from_query($query)
+{
     $results = [];
 
     if ($query->have_posts()) :
@@ -19,14 +20,8 @@ function get_posts_from_query($query) {
     return $results;
 }
 
-function get_latest_posts($page = 1) {
-    $cache_key = 'get_latest_posts_page_' . $page;
-    $cached_result = get_transient($cache_key);
-
-    if ($cached_result === true) {
-        return $cached_result;
-    }
-
+function get_latest_posts($page = 1)
+{
     $args = array(
         'post_type'      => 'post',
         'posts_per_page' => CONST_NUMBER_LATEST_POSTS,
@@ -36,12 +31,11 @@ function get_latest_posts($page = 1) {
     $query = new WP_Query($args);
     $posts = get_posts_from_query($query);
 
-    set_transient($cache_key, $posts, 24 * 60 * 60 );
-
     return $posts;
 }
 
-function get_posts_by_category($category_id, $page_id) {
+function get_posts_by_category($category_id, $page_id)
+{
     $cached_result = get_transient('get_posts_by_category_' . $category_id);
 
     if ($cached_result === true) {
@@ -58,12 +52,13 @@ function get_posts_by_category($category_id, $page_id) {
     $query = new WP_Query($args);
     $posts = get_posts_from_query($query);
 
-    set_transient('get_posts_by_category_' . $category_id, $posts, 24 * 60 * 60 );
+    set_transient('get_posts_by_category_' . $category_id, $posts, 24 * 60 * 60);
 
     return $posts;
 }
 
-function get_posts_by_query($s, $page_id) {
+function get_posts_by_query($s, $page_id)
+{
     $cached_result = get_transient('get_posts_by_search_' . $s);
 
     if ($cached_result === true) {
@@ -73,40 +68,25 @@ function get_posts_by_query($s, $page_id) {
     $args = array(
         'post_type'      => 'post',
         'posts_per_page' => CONST_NUMBER_LATEST_POSTS,
-        's'              => $s, 
+        's'              => $s,
         'paged' => $page_id
     );
 
     $query = new WP_Query($args);
     $posts = get_posts_from_query($query);
 
-    set_transient('get_posts_by_search_' . $s, $posts, 24 * 60 * 60 );
+    set_transient('get_posts_by_search_' . $s, $posts, 24 * 60 * 60);
 
     return $posts;
 }
 
-function get_posts_by_id($id) {
-    $cached_result = get_transient('get_posts_by_id' . $id);
-
-    if ($cached_result === true) {
-        return $cached_result;
-    }
-
-    $post_data = get_post($id);
-
-    set_transient('get_posts_by_id' . $id, $post_data, 24 * 60 * 60 );
-
-    return $post_data;
+function get_posts_by_id($id)
+{
+    return get_post($id);
 }
 
-function get_random_posts($page = 1) {
-    $cache_key = 'get_random_posts_page_' . $page;
-    $cached_result = get_transient($cache_key);
-
-    if ($cached_result !== false) {
-        return $cached_result;
-    }
-
+function get_random_posts($page = 1)
+{
     $args = array(
         'post_type'      => 'post',
         'posts_per_page' => 6,
@@ -115,10 +95,5 @@ function get_random_posts($page = 1) {
     );
 
     $query = new WP_Query($args);
-    $posts = get_posts_from_query($query);
-
-    set_transient($cache_key, $posts, 24 * 60 * 60);
-
-    return $posts;
+    return get_posts_from_query($query);
 }
-?>

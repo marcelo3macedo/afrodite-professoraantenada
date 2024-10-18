@@ -9,7 +9,7 @@ include_once 'components/header/main.php';
 include_once 'components/menu/main.php';
 ?>
 
-
 <?php
-get_template_part("views/footer/bar")
+get_template_part("views/main/content");
+get_template_part("views/footer/bar");
 ?>

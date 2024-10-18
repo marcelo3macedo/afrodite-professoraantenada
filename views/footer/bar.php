@@ -16,9 +16,23 @@ $footerData = get_footer_data();
             </div>
         <?php endif; ?>
         <div class="copyright">
-            <h5 class="text-light">
+            <h5 class="text-white">
                 <?= $footerData['copyright'] ?>
             </h5>
         </div>
     </div>
 </footer>
+
+<script>
+    function downloadPostImage(element) {
+        const image = element.closest('.image').querySelector('img').src;
+
+        const link = document.createElement('a');
+        link.href = image;
+        link.target = "_blanks";
+
+        link.download = 'downloaded-image.png';
+
+        link.click();
+    }
+</script>

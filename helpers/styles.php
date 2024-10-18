@@ -1,5 +1,6 @@
 <?php
-function styles_recover($url) {
+function styles_recover($url)
+{
     if (strstr($url, 'professoraantenada.dev.br')) {
         echo <<<EOL
             <link rel="stylesheet" href="$url/assets/css/style_generated.css">
@@ -12,8 +13,9 @@ function styles_recover($url) {
     EOL;
 }
 
-function styles_amp() {
-	$content = file_get_contents(get_template_directory() . '/assets/css/style.css');
+function styles_amp()
+{
+    $content = file_get_contents(get_template_directory() . '/assets/css/style.css');
 
     echo <<<EOL
 
@@ -24,4 +26,3 @@ function styles_amp() {
         
     EOL;
 }
-?>
