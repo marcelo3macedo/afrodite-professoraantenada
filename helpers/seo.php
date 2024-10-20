@@ -1,9 +1,103 @@
 <?php
 
+include_once 'constants.php';
 include_once 'translation.php';
 include_once 'time.php';
 
-function seo_generate($post) {
+function get_seo_data()
+{
+    if (is_single()) {
+        return get_seo_single_data();
+    }
+
+    if (is_category()) {
+        return get_seo_category_data();
+    }
+
+    return get_seo_index_data();
+}
+
+function get_seo_category_data()
+{
+    global $wp;
+
+    $category = get_queried_object();
+    $langData = loadLangInfo();
+    $icon = get_template_directory_uri() . '/assets/images/icon.png';
+    $socialSrc = get_template_directory_uri() . '/assets/images/social.jpg';
+    $actualUrl = home_url(add_query_arg(array(), $wp->request));
+    $ampUrl = $actualUrl . '?amp=1';
+    $tags = array_map('trim', explode(",", $langData->blog->keywords));
+
+    return [
+        'name' => $langData->blog->name,
+        'title' => $category->name,
+        'description' => substr($category->description, 0, 200),
+        'keywords' => $langData->blog->keywords,
+        'icon' => $icon,
+        'actualUrl' => $actualUrl,
+        'ampUrl' => $ampUrl,
+        'tags' => $tags,
+        'socialSrc' => $socialSrc,
+        'updatedTime' => CONST_UPDATED_TIME
+    ];
+}
+
+function get_seo_single_data()
+{
+    global $post;
+    global $wp;
+    $langData = loadLangInfo();
+    $icon = get_template_directory_uri() . '/assets/images/icon.png';
+    $socialSrc = get_the_post_thumbnail_url(get_the_ID(), "medium");
+    $actualUrl = home_url(add_query_arg(array(), $wp->request));
+    $ampUrl = $actualUrl . '?amp=1';
+    $seo_infos = extract_infos($post->post_excerpt);
+    $tags = array_map('trim', explode(",", $seo_infos->keywords));
+
+    return [
+        'name' => $langData->blog->name,
+        'title' => get_the_title($post->ID),
+        'description' => $seo_infos->description,
+        'keywords' => $seo_infos->keywords,
+        'icon' => $icon,
+        'actualUrl' => $actualUrl,
+        'ampUrl' => $ampUrl,
+        'tags' => $tags,
+        'socialSrc' => $socialSrc,
+        'updatedTime' => CONST_UPDATED_TIME
+    ];
+}
+
+function get_seo_index_data()
+{
+    global $wp;
+    $langData = loadLangInfo();
+    $icon = get_template_directory_uri() . '/assets/images/icon.png';
+    $socialSrc = get_template_directory_uri() . '/assets/images/social.jpg';
+    $actualUrl = home_url(add_query_arg(array(), $wp->request));
+    $ampUrl = $actualUrl . '?amp=1';
+    $tags = array_map('trim', explode(",", $langData->blog->keywords));
+
+    return [
+        'name' => $langData->blog->name,
+        'title' => $langData->blog->title,
+        'description' => $langData->blog->description,
+        'keywords' => $langData->blog->keywords,
+        'icon' => $icon,
+        'actualUrl' => $actualUrl,
+        'ampUrl' => $ampUrl,
+        'tags' => $tags,
+        'socialSrc' => $socialSrc,
+        'updatedTime' => CONST_UPDATED_TIME
+    ];
+}
+
+
+
+
+function seo_generate($post)
+{
     global $wp;
 
     $data = loadLangInfo();
@@ -14,8 +108,7 @@ function seo_generate($post) {
         ? substr(get_the_excerpt(), 0, 158)
         : $data->blog->description;
     $description = is_home() ?
-        $data->blog->description :
-        ($seo_infos->description ?? $default_description);
+        $data->blog->description : ($seo_infos->description ?? $default_description);
     $keywords = $seo_infos->keywords ?? $data->blog->keywords;
     $image = get_the_post_thumbnail_url(get_the_ID(), "thumbnail");
     $icon = get_template_directory_uri() . '/assets/images/icon.png';
@@ -40,7 +133,8 @@ function seo_generate($post) {
     ];
 }
 
-function seo_basics($seo) {
+function seo_basics($seo)
+{
     echo <<<EOL
         <title>$seo->title</title>
         <meta name="description" content="$seo->description">
@@ -66,7 +160,8 @@ function seo_basics($seo) {
     EOL;
 }
 
-function extract_infos($excerpt) {
+function extract_infos($excerpt)
+{
     if (empty($excerpt)) {
         return;
     }
@@ -81,4 +176,3 @@ function extract_infos($excerpt) {
         'keywords' => $keywords
     ];
 }
-?>

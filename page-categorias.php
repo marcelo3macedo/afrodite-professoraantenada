@@ -1,31 +1,21 @@
 <?php
-	include_once 'constants/loader.php';
-	include_once 'components/header/main.php';
-	include_once 'components/menu/main.php';
-	include_once 'helpers/content.php';
-    include_once 'elements/gallery/shortcuts.php';
-    include_once 'elements/gallery/posts.php';
-    include_once 'helpers/content.php';
-    include_once 'helpers/holidays.php';
-    include_once 'helpers/posts.php';
+include_once 'controllers/categories.php';
 
-    global $lang;
-
-	$json = file_get_contents(get_template_directory() . '/assets/translations/pt.json');
-	$lang = json_decode($json);
-
-    $holidaysJSON = file_get_contents(get_template_directory() . '/assets/data/holidays.json');
-
-	$holidays = json_decode($holidaysJSON);
-	$next_holidays = get_next_holidays($holidays, 20);
+$categoryData = get_categories_data();
+set_query_var('categoryData', $categoryData);
 ?>
 
-<div class="container">
-	<div class="holidays">
-		<?php load_shortcut_gallery($next_holidays) ?>
+<?php
+get_template_part("views/header/main");
+?>
+
+<div class="bg-yellow-100 container mx-auto my-4">
+	<div class="w-full my-8 md:my-0 px-1">
+		<?php
+		get_template_part("views/categories/categories");
+		?>
 	</div>
 </div>
 
 <?php
-	include_once 'components/footer/main.php';
-?>
+get_template_part("views/footer/bar"); ?>

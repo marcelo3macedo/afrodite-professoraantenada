@@ -1,69 +1,56 @@
 <?php
-	global $lang;
+global $lang;
 
-	$json = file_get_contents(get_template_directory() . '/assets/translations/pt.json');
-	$lang = json_decode($json);
+$json = file_get_contents(get_template_directory() . '/assets/translations/pt.json');
+$lang = json_decode($json);
 
-	include_once 'constants/loader.php';
-	include_once 'components/header/main.php';
-	include_once 'components/menu/main.php';
-	include_once 'helpers/content.php';
+include_once 'controllers/categories.php';
+include_once 'helpers/content.php';
 ?>
 
-<div class="page container">
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->privacyPolicy->title) ?>
-			<?php getTextMultiLineContent('h2', $lang->privacyPolicy->subtitle) ?>
+<?php
+get_template_part("views/header/main");
+?>
+<div class="container mx-auto p-4 min-h-lvh md:flex w-full">
+	<section class="bg-yellow-50 p-4 rounded-xl w-full">
+		<h1 class="text-2xl font-bold pt-2 text-violet-950"><?= $lang->privacyPolicy->title; ?></h1>
+		<p class="text-sm"><?= $lang->privacyPolicy->subtitle; ?></p>
+		<div class="my-4">
+			<p class="text-lg my-2"><?= $lang->privacyPolicy->description; ?></p>
 		</div>
-	</div>
-	<div class="block">
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->privacyPolicy->description) ?>
+		<div class="my-4">
+			<div class="font-bold">
+				<?php getTextMultiLineContent('h3', $lang->privacyPolicy->info->title) ?>
+			</div>
+			<?php getTextMultiLineContent('p', $lang->privacyPolicy->info->description) ?>
 		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h2', $lang->privacyPolicy->info->title) ?>
+		<div class="my-4">
+			<div class="font-bold">
+				<?php getTextMultiLineContent('h3', $lang->privacyPolicy->share->title) ?>
+			</div>
+			<?php getTextMultiLineContent('p', $lang->privacyPolicy->share->description) ?>
 		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->privacyPolicy->info->description) ?>
+		<div class="my-4">
+			<div class="font-bold">
+				<?php getTextMultiLineContent('h3', $lang->privacyPolicy->safe->title) ?>
+			</div>
+			<?php getTextMultiLineContent('p', $lang->privacyPolicy->safe->description) ?>
 		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->privacyPolicy->share->title) ?>
+		<div class="my-4">
+			<div class="font-bold">
+				<?php getTextMultiLineContent('h3', $lang->privacyPolicy->rights->title) ?>
+			</div>
+			<?php getTextMultiLineContent('p', $lang->privacyPolicy->rights->description) ?>
 		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->privacyPolicy->share->description) ?>
+		<div class="my-4">
+			<div class="font-bold">
+				<?php getTextMultiLineContent('h3', $lang->privacyPolicy->updates->title) ?>
+			</div>
+			<?php getTextMultiLineContent('p', $lang->privacyPolicy->updates->description) ?>
 		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->privacyPolicy->safe->title) ?>
-		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->privacyPolicy->safe->description) ?>
-		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->privacyPolicy->rights->title) ?>
-		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->privacyPolicy->rights->description) ?>
-		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->privacyPolicy->updates->title) ?>
-		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->privacyPolicy->updates->description) ?>
-		</div>
-	</div>
+	</section>
 </div>
 
 <?php
-	include_once 'components/footer/main.php';
+get_template_part("views/footer/bar");
 ?>

@@ -1,59 +1,47 @@
 <?php
-	global $lang;
+global $lang;
 
-	$json = file_get_contents(get_template_directory() . '/assets/translations/pt.json');
-	$lang = json_decode($json);
+$json = file_get_contents(get_template_directory() . '/assets/translations/pt.json');
+$lang = json_decode($json);
 
-	include_once 'constants/loader.php';
-	include_once 'components/header/main.php';
-	include_once 'components/menu/main.php';
-	include_once 'helpers/content.php';
+include_once 'controllers/categories.php';
+include_once 'helpers/content.php';
 ?>
 
-<div class="page container">
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->about->title) ?>
+<?php
+get_template_part("views/header/main");
+?>
+
+<div class="container mx-auto p-4 min-h-lvh md:flex w-full">
+	<section class="bg-yellow-50 p-4 rounded-xl w-full">
+		<h1 class="text-2xl font-bold py-2 text-violet-950"><?= $lang->about->title; ?></h1>
+		<div class="my-2">
+			<p class="text-lg my-2"><?= $lang->about->subtitle; ?></p>
+			<p class="text-lg"><?= $lang->about->description; ?></p>
 		</div>
-	</div>
-	<div class="block">
-		<div class="body">
-			<?php getTextMultiLineContent('h2', $lang->about->subtitle) ?>
-			<?php getTextMultiLineContent('h3', $lang->about->description) ?>
+		<div class="my-4">
+			<p class="text-lg my-2"><?= $lang->about->goal->title; ?></p>
+			<p class="text-lg"><?= $lang->about->goal->description; ?></p>
 		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h2', $lang->about->goal->title) ?>
+		<div class="my-4">
+			<div class="font-bold">
+				<?php getTextMultiLineContent('h3', $lang->about->content->title) ?>
+			</div>
+			<?php getTextMultiLineContent('p', $lang->about->content->description) ?>
 		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->about->goal->description) ?>
+		<div class="my-4">
+			<div class="font-bold">
+				<?php getTextMultiLineContent('h3', $lang->about->contact->title) ?>
+			</div>
+			<?php getTextMultiLineContent('p', $lang->about->contact->description) ?>
 		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->about->content->title) ?>
+		<div class="my-4">
+			<p class="text-lg my-2"><?= $lang->about->contact->thanks; ?></p>
+			<p class="text-lg"><?= $lang->blog->name; ?></p>
 		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->about->content->description) ?>
-		</div>
-	</div>
-	<div class="block">
-		<div class="title">
-			<?php getTextMultiLineContent('h1', $lang->about->contact->title) ?>
-		</div>
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->about->contact->description) ?>
-		</div>
-	</div>
-	<div class="block">
-		<div class="body">
-			<?php getTextMultiLineContent('h3', $lang->about->contact->thanks) ?>
-			<?php getTextMultiLineContent('h3', $lang->blog->name) ?>
-		</div>
-	</div>
+	</section>
 </div>
 
 <?php
-	include_once 'components/footer/main.php';
+get_template_part("views/footer/bar");
 ?>
