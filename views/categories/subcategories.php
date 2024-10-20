@@ -13,12 +13,12 @@ $subcategories = $categoryData['subcategories'];
             <div class="grid grid-cols-1 gap-8 mt-4 xl:gap-8 md:grid-cols-2 xl:grid-cols-2">
                 <?php foreach ($subcategories as $subcategory) : ?>
                     <div class="flex flex-col items-center p-6 space-y-3 text-center bg-slate-50 rounded-xl">
-                        <a href="/category/<?php getTextContent($subcategory->slug) ?>" class="flex flex-col hover:opacity-85 hover:cursor-pointer">
+                        <a href="/category/<?= $subcategory->slug ?>" class="flex flex-col hover:opacity-85 hover:cursor-pointer">
                             <h2 class="text-lg py-2 font-semibold text-gray-700 capitalize">
-                                <?php getTextContent($subcategory->name) ?>
+                                <?= $subcategory->name ?>
                             </h2>
                             <p class="text-gray-500 text-justify text-sm">
-                                <?php getTextContent($subcategory->description) ?>
+                                <?= $subcategory->description ?>
                             </p>
                             <div class="flex items-center -mx-1 text-sm text-violet-500 capitalize transition-colors duration-300 transform hover:underline hover:text-blue-600">
                                 <span class="mx-1">Ver conteúdos</span>
