@@ -1,7 +1,9 @@
 <?php
 include_once __DIR__ . '/../../controllers/footer.php';
+include_once __DIR__ . '/../../helpers/amp.php';
 
 $footerData = get_footer_data();
+$isAmp = checkAmpActivate();
 ?>
 
 <footer>
@@ -23,21 +25,23 @@ $footerData = get_footer_data();
     </div>
 </footer>
 
-<script>
-    function downloadPostImage(element) {
-        const image = element.closest('.image').querySelector('img').src;
+<?php if (!$isAmp): ?>
+    <script>
+        function downloadPostImage(element) {
+            const image = element.closest('.image').querySelector('img').src;
 
-        const link = document.createElement('a');
-        link.href = image;
-        link.target = "_blanks";
+            const link = document.createElement('a');
+            link.href = image;
+            link.target = "_blanks";
 
-        link.download = 'downloaded-image.png';
+            link.download = 'downloaded-image.png';
 
-        link.click();
-    }
+            link.click();
+        }
 
-    document.getElementById('menu-action').addEventListener('click', function() {
-        const menu = document.getElementById('menu-mobile');
-        menu.classList.toggle('hidden');
-    });
-</script>
+        document.getElementById('menu-action').addEventListener('click', function() {
+            const menu = document.getElementById('menu-mobile');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+<?php endif ?>

@@ -1,14 +1,16 @@
 <?php
-    include_once __DIR__ . '/../../helpers/content.php';
-    include_once __DIR__ . '/../../elements/list/simple.php';
+include_once __DIR__ . '/../../helpers/content.php';
+include_once __DIR__ . '/../../helpers/amp.php';
+include_once __DIR__ . '/../../elements/list/simple.php';
 
-	global $lang;
+global $lang;
+$isAmp = checkAmpActivate();
 ?>
-        
+
 <footer>
     <div class="container mx-auto">
         <div class="menu">
-            <?php load_simple_list($lang->footer->links) ?>        
+            <?php load_simple_list($lang->footer->links) ?>
         </div>
         <div class="copyright">
             <h5 class="text-light">
@@ -18,20 +20,22 @@
     </div>
 </footer>
 
-<script>
-    function downloadPostImage(element) {
-        const image = element.closest('.image').querySelector('img').src;
-        
-        const link = document.createElement('a');
-        link.href = image;
-        link.target = "_blanks";
-        
-        link.download = 'downloaded-image.png';
-        
-        link.click();
-    }
-</script>
+<?php if (!$isAmp): ?>
+    <script>
+        function downloadPostImage(element) {
+            const image = element.closest('.image').querySelector('img').src;
+
+            const link = document.createElement('a');
+            link.href = image;
+            link.target = "_blanks";
+
+            link.download = 'downloaded-image.png';
+
+            link.click();
+        }
+    </script>
+<?php endif ?>
 
 <?php
-    include_once 'closing.php';
+include_once 'closing.php';
 ?>
