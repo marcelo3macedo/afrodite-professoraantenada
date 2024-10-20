@@ -6,7 +6,7 @@ if (is_array($headerData['categories'])): ?>
         <?php foreach ($headerData['categories'] as $category): ?>
             <li>
                 <a
-                    href="<?= $category->slug ?>"
+                    href="/<?= $category->slug ?>"
                     class="block rounded-lg px-4 text-lg font-bold text-white hover:opacity-80 hover:cursor-pointer">
                     <?= $category->name; ?>
                 </a>
