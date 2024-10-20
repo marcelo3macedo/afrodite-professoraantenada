@@ -597,9 +597,6 @@ video {
 .wp-block-separator {
   margin: 20px 0;
 }
-.block {
-  display: block;
-}
 .flex,
 .page .block .social {
   display: flex;
