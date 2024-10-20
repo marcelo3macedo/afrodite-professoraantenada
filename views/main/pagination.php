@@ -8,7 +8,7 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         Anterior
     </a>
 
-    <?php if (count($mainData['posts']) == CONST_NUMBER_LATEST_POSTS): ?>
+    <?php if (count($mainData['posts']) == 12): ?>
         <a href="?page=<?php echo $page + 1; ?>"
             class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md hover:bg-violet-950 hover:text-white">
             Próximo

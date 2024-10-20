@@ -35,4 +35,9 @@ $footerData = get_footer_data();
 
         link.click();
     }
+
+    document.getElementById('menu-action').addEventListener('click', function() {
+        const menu = document.getElementById('menu-mobile');
+        menu.classList.toggle('hidden');
+    });
 </script>

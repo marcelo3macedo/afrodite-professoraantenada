@@ -1,4 +1,6 @@
 <?php
+include_once 'constants.php';
+
 function get_category_id($queried)
 {
     if ($queried instanceof WP_Term && is_category()) {
@@ -56,11 +58,11 @@ function get_list_categories_by_childen($parent_category_id)
     return $results;
 }
 
-function get_list_categories_by_childen_with_initial($parent_category_id, $initial_name)
+function get_list_categories_by_childen_with_initial($parent_category_id, $initial_name = 'Início')
 {
     $results = [];
 
-    $results[] = (object)[
+    $results[] = [
         'title' => $initial_name,
         'url' => '/'
     ];
@@ -68,7 +70,7 @@ function get_list_categories_by_childen_with_initial($parent_category_id, $initi
     $categories =  get_categories_by_children($parent_category_id);
 
     foreach ($categories as $category) {
-        $results[] = (object)[
+        $results[] = [
             'title' => $category->name,
             'url' => '/category/' . $category->slug
         ];

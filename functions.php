@@ -2,6 +2,7 @@
 function mytheme_customize_register($wp_customize)
 {
     mytheme_main($wp_customize);
+    mytheme_header($wp_customize);
     mytheme_footer($wp_customize);
 }
 
@@ -57,6 +58,30 @@ function mytheme_main($wp_customize)
         'choices' => mytheme_get_categories(),
     ));
 }
+
+function mytheme_header($wp_customize)
+{
+    $wp_customize->add_section('header_section', array(
+        'title' => __('Header', 'mytheme'),
+        'description' => __('Customize the header container', 'mytheme'),
+        'priority' => 120,
+    ));
+
+    $wp_customize->add_setting('header_categories', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('header_control', array(
+        'label' => __('Header', 'mytheme'),
+        'section' => 'header_section',
+        'settings' => 'header_categories',
+        'type' => 'select',
+        'choices' => mytheme_get_categories(),
+    ));
+}
+
 
 function mytheme_footer($wp_customize)
 {

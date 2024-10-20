@@ -11,6 +11,7 @@ function get_single_data($postId)
         $categories = get_main_complement_category($postId);
         $related = get_random_posts();
 
+
         return [
             'categories' => $categories,
             'post' => $post,

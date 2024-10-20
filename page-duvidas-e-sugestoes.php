@@ -3,14 +3,13 @@ global $lang;
 
 $json = file_get_contents(get_template_directory() . '/assets/translations/pt.json');
 $lang = json_decode($json);
-$socialJson = file_get_contents(get_template_directory() . '/assets/data/social.json');
-$social_items = json_decode($socialJson);
 
-include_once 'constants/loader.php';
-include_once 'components/header/main.php';
-include_once 'components/menu/main.php';
+include_once 'controllers/categories.php';
 include_once 'helpers/content.php';
-include_once 'elements/gallery/social.php';
+?>
+
+<?php
+get_template_part("views/header/main");
 ?>
 
 <div class="container mx-auto p-4 min-h-lvh md:flex w-full">
@@ -43,6 +42,6 @@ include_once 'elements/gallery/social.php';
 	</section>
 </div>
 
+
 <?php
-get_template_part("views/footer/bar");
-?>
+get_template_part("views/footer/bar"); ?>

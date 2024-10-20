@@ -4,12 +4,13 @@ global $lang;
 $json = file_get_contents(get_template_directory() . '/assets/translations/pt.json');
 $lang = json_decode($json);
 
-include_once 'constants/loader.php';
-include_once 'components/header/main.php';
-include_once 'components/menu/main.php';
+include_once 'controllers/categories.php';
 include_once 'helpers/content.php';
 ?>
 
+<?php
+get_template_part("views/header/main");
+?>
 <div class="container mx-auto p-4 min-h-lvh md:flex w-full">
 	<section class="bg-yellow-50 p-4 rounded-xl w-full">
 		<h1 class="text-2xl font-bold pt-2 text-violet-950"><?= $lang->privacyPolicy->title; ?></h1>
