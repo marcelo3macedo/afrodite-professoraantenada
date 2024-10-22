@@ -18,9 +18,9 @@ $isAmp = checkAmpActivate();
             </div>
         <?php endif; ?>
         <div class="copyright">
-            <h5 class="text-white">
+            <p class="text-white">
                 <?= $footerData['copyright'] ?>
-            </h5>
+            </p>
         </div>
     </div>
 </footer>

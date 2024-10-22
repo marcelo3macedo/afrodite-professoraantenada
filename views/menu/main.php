@@ -9,6 +9,8 @@ $headerData = get_query_var('headerData');
                 <a href="/" class="mx-auto ">
                     <img
                         class="w-auto h-16 sm:h-20"
+                        width="208"
+                        height="64"
                         src="<?= $headerData['logoUrl']; ?>"
                         alt="<?= $headerData['seo']['name']; ?>" />
                 </a>

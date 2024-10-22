@@ -7,7 +7,7 @@ $headerData = get_query_var('headerData');
 <head>
     <!-- Structure -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
 
     <!-- Styles -->
     <link rel="stylesheet" href="<?= $headerData['stylesUrl']; ?>">

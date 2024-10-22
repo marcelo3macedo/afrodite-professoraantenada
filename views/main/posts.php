@@ -13,6 +13,8 @@ $mainData = get_query_var('mainData');
                     <img
                         alt="<?= $post->title; ?>"
                         src="<?= $post->thumbnail; ?>"
+                        height="292"
+                        width="384"
                         class="h-96 w-full rounded-md object-contain" />
 
                     <div class="mt-2">
