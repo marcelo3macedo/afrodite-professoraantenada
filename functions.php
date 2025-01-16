@@ -121,3 +121,4 @@ function mytheme_footer($wp_customize)
 
 add_action('customize_register', 'mytheme_customize_register');
 add_post_type_support( 'page', 'excerpt' );
+add_theme_support( 'post-thumbnails' );
